@@ -22,16 +22,16 @@ def parse_args(argv):
 
 def main(argv):
     args = parse_args(argv)
-    # model = MVC(312).double()
-    # checkpoint = torch.load(args.model_f)
-    # model.load_state_dict(checkpoint['model_state_dict'])
+    model = MVC(312).double()
+    checkpoint = torch.load(args.model_f)
+    model.load_state_dict(checkpoint['model_state_dict'])
     
     sample = json.load(open(args.sample))
     signals = [np.array(sample['s0']), np.array(sample['s1']), np.array(sample['s2'])]
     features = features_from_sensors(signals, args.feature_norm, args.freq_norm)
-    # pred = model.predict(features)
-    # print(f"Classe: {sample['class']}")
-    # print(f"Classe predita: {pred}")
+    pred = model.predict(features)
+    print(f"Classe: {sample['class']}")
+    print(f"Classe predita: {pred}")
     
     
 if __name__ == "__main__":

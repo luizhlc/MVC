@@ -39,8 +39,6 @@ def features_from_sensors(sensor_data, feature_file, freq_file):
         "Crista": []
     }
     
-    print(rms_global, peak, crista, peak2peak)
-    
     ft_limits = json.load(open(feature_file))
     for m in metrics_map:
         results = []
@@ -54,60 +52,11 @@ def features_from_sensors(sensor_data, feature_file, freq_file):
         max_v = freq_limits[f's{s}']
         fft_ys_norm.append(yfs/max_v)
     features = []
-    features.append(
-        metrics_norm_map["RMS"][0][0]
-    )
-    for s in range(n_sensors):
+    
+    for s in range(3):
         for m, m_data in metrics_norm_map.items():
-    for label, f_data in metrics_norm_map.items():
-        for s_idx, s_data in enumerate(f_data):
-            features.append(metrics_norm_map[label][s_idx]
-    s0_RMS
-    s0_Peak
-    s0_Peak2Peak
-    s0_Crista
-    s1_RMS
-    s1_Peak
-    s1_Peak2Peak
-    s1_Crista
-    s2_RMS
-    s2_Peak
-    s2_Peak2Peak
-    s2_Crista
-    print(fft_ys_norm)
-    print(metrics_norm_map)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            
-    return features
+            features.append(m_data[s][0])
+        
+        for idx in range(len(fft_ys_norm[0][0])):
+            features.append(fft_ys_norm[s][0][idx])
+    return torch.tensor([features]).double()

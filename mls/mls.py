@@ -34,10 +34,10 @@ class MVC(nn.Module):
         return self.layers(x)
 
     def predict(self, x):
-        print(x.shape)
         result = self.layers(x).argmax(1).data.cpu().numpy()[0]
         classes_k = ['Classe A', 'Classe B', 'Classe C', 'Classe D', 'Classe E']
         return classes_k[result]
+    
 def training_epoch(net, optimizer, loss_f, dataloader):
     t_loss = 0
     t_acc = 0
