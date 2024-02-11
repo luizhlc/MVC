@@ -31,4 +31,23 @@ Projeto para resolução do problema para o edital FIESC/00122/2024 - Pesquisado
 
 * IMPORTANTE: Os scripts .ipynb possuem uma flag no início de cada página
     * True faz com que os dados sejam salvos ou o treinamento seja executado
-    * False ira executar todas as células, mas sem salvar dados ou carregando arquivos quando for o caso 
+    * False irá executar todas as células, mas sem salvar dados ou carregando arquivos quando for o caso 
+
+## Envs
+### Arquivos com ambientes:
+* mvc.yml
+	* Ambiente simplificado
+
+* mvc_jupyterlab.yml
+	* Ambiente mais completo, incluindo o jupyterlab para rodar os notebooks
+
+* Comandos para criar o env
+$conda env create -f mvc.yml
+
+* Ativar
+$source activate mvc
+
+* Exportar env como kernel do jupyter
+$ipython kernel install --user --name=mvc
+
+* Não esquecer de selecionar o kernel do jupyter notebook quando for rodar o projeto
