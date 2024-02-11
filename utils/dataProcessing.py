@@ -30,4 +30,3 @@ def apply_fft(sig, f, n):
     yf = fft(sig[:])
     yf = 2.0/n * np.abs(yf[:, :n//2])
     return xf, yf
-
