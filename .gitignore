@@ -3,3 +3,4 @@
 *.csv
 *.checkpoint
 *.json
+*__pycache__*
