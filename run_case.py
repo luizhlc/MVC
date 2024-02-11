@@ -5,8 +5,6 @@ from utils.inference_tools import features_from_sensors
 import sys
 import argparse
 import numpy as np
-
-
 def parse_args(argv):
     parser = argparse.ArgumentParser(description="Machine Vibration Classification")
     parser.add_argument("--model_f", type=str, required=True,

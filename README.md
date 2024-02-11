@@ -28,3 +28,7 @@ Projeto para resolução do problema para o edital FIESC/00122/2024 - Pesquisado
 	
 * reports/
 	* arquivo contendo a execução dos jupyters em formato .html
+
+* IMPORTANTE: Os scripts .ipynb possuem uma flag no início de cada página
+    * True faz com que os dados sejam salvos ou o treinamento seja executado
+    * False ira executar todas as células, mas sem salvar dados ou carregando arquivos quando for o caso 
